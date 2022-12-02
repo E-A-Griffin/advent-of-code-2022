@@ -5,19 +5,19 @@
 (def session-header
   (str/trim (slurp "resources/session.txt")))
 
-(defn pull-solution
+(defn pull-input
   [day]
   (let [url (format "https://adventofcode.com/2022/day/%d/input" day)
         opts {:headers {"Cookie"
 	                      session-header}}
-        {:keys [status headers body error] :as resp} @(http.client/get url
-                                                                       opts)]
+        {:keys [status body error]} @(http.client/get url
+                                                      opts)]
     (if error
       (println "Failed, exception: " error)
       (println "HTTP GET success: " status))
     body))
 
-(def pull-solution-cached (memoize pull-solution))
+(def pull-input-cached (memoize pull-input))
 
 (defn str->vector
   "Splits `s` into a vector separated be `delim` (which defaults to \"\n\")"
