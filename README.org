@@ -1,0 +1,2 @@
+#+title: Advent of Code 2022 Solutions
+#+author: Emma Griffin
