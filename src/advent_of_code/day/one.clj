@@ -4,7 +4,7 @@
 
 (def in (pull-input/str->vector (pull-input/pull-input-cached 1)))
 
-(defn get-callories
+(defn get-calories
   [input]
   (map (comp (partial reduce +) (partial map parse-long))
        (remove (partial = '(""))
@@ -12,8 +12,8 @@
 
 (defn solution-part-1
   [input]
-  (apply max (get-callories input)))
+  (apply max (get-calories input)))
 
 (defn solution-part-2
   [input]
-  (reduce + (take-last 3 (sort (get-callories input)))))
+  (reduce + (take-last 3 (sort (get-calories input)))))
