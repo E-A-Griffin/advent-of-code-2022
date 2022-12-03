@@ -1,2 +1,4 @@
 #+title: Advent of Code 2022 Solutions
 #+author: Emma Griffin
+
+Personal Advent of Code solutions for 2022 done in Clojure. Not aiming for efficiency, brevity, or any other metric, just solving these in a way that feels most intuitive to me personally.
