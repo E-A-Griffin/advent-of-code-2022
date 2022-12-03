@@ -10,10 +10,10 @@
        (remove (partial = '(""))
                (partition-by str/blank? input))))
 
-(defn solution-part-1
+(defn solution-part1
   [input]
   (apply max (get-calories input)))
 
-(defn solution-part-2
+(defn solution-part2
   [input]
   (reduce + (take-last 3 (sort (get-calories input)))))

@@ -57,13 +57,13 @@
   [pair]
   (+ (second pair) (apply win-draw-lose pair)))
 
-(defn solution-part-1
+(defn solution-part1
   [input]
   (reduce + (mapv (comp get-point-for-round
                         parse-pair-part1)
                   input)))
 
-(defn solution-part-2
+(defn solution-part2
   [input]
   (reduce + (mapv (comp get-point-for-round
                         optimal-choice-part2
